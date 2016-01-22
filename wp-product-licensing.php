@@ -85,6 +85,7 @@ class WP_Product_Licensing {
 
 		if ( is_admin() ) {
 			include_once( 'includes/admin/class-wpl-admin-menus.php' );
+			include_once( 'includes/admin/class-wpl-admin-post-types.php' );
 		}
 	}
 
