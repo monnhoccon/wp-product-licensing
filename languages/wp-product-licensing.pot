@@ -1,0 +1,45 @@
+# Copyright (C) 2016 AxisThemes
+# This file is distributed under the GPLv3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Product Licensing 1.0.0\n"
+"Report-Msgid-Bugs-To: "
+"https://github.com/axisthemes/wp-product-licensing/issues\n"
+"POT-Creation-Date: 2016-01-22 16:27:18+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"X-Generator: grunt-wp-i18n 0.5.3\n"
+
+#: wp-product-licensing.php:92
+msgid "WP Product License depends on the last version of %s or later to work!"
+msgstr ""
+
+#: wp-product-licensing.php:92
+msgid "WooCommerce 2.3"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP Product Licensing"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.axisthemes.com/wp-product-licensing/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A WooCommerce plugin for handling WP Product Licences and access to "
+"downloads."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "AxisThemes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://axisthemes.com"
+msgstr ""
