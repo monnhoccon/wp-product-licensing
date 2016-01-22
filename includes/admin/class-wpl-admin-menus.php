@@ -86,7 +86,7 @@ class WPL_Admin_Menus {
 	 * @return array
 	 */
 	public function wc_screen_ids( $screen_ids ) {
-		$wc_screen_id = sanitize_title( __( 'License', 'wp-product-licensing' ) );
+		$wc_screen_id = sanitize_title( __( 'Licenses', 'wp-product-licensing' ) );
 		$screen_ids[] = $wc_screen_id . '_page_wpl-add-license';
 		return $screen_ids;
 	}
