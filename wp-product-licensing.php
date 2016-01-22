@@ -82,6 +82,9 @@ class WP_Product_Licensing {
 	 */
 	private function includes() {
 
+		if ( is_admin() ) {
+			include_once( 'includes/admin/class-wpl-admin-menus.php' );
+		}
 	}
 
 	/**
