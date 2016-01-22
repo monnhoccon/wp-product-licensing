@@ -77,5 +77,5 @@ Yes you can! Join in on our [GitHub repository](http://github.com/axisthemes/wp-
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.0 - TBD =
 * First stable release.
