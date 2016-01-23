@@ -29,7 +29,7 @@ class WPL_Admin_Post_Types {
 
 		// Edit post screens
 		add_filter( 'enter_title_here', array( $this, 'enter_title_here' ), 1, 2 );
-		add_action( 'edit_form_after_title', array( $this, 'edit_form_after_title' ) );
+		// add_action( 'edit_form_after_title', array( $this, 'edit_form_after_title' ) );
 
 		// Meta-Box controls
 		add_action( 'add_meta_boxes', array( $this, 'remove_meta_boxes' ), 10 );
