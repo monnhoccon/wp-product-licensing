@@ -29,6 +29,11 @@ class WPL_Admin_Post_Types {
 
 		// Edit post screens
 		add_filter( 'enter_title_here', array( $this, 'enter_title_here' ), 1, 2 );
+		add_action( 'edit_form_after_title', array( $this, 'edit_form_after_title' ) );
+
+		// Meta-Box controls
+		add_action( 'add_meta_boxes', array( $this, 'remove_meta_boxes' ), 10 );
+		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 20 );
 	}
 
 	/**
@@ -90,6 +95,67 @@ class WPL_Admin_Post_Types {
 		}
 
 		return $text;
+	}
+
+	/**
+	 * Print API Product description textarea field.
+	 * @param WP_Post $post
+	 */
+	public function edit_form_after_title( $post ) {
+		if ( 'api_product' === $post->post_type ) {
+			?>
+			<textarea id="woocommerce-api-product-description" name="excerpt" cols="5" rows="2" placeholder="<?php esc_attr_e( 'Description (optional)', 'wp-product-licensing' ); ?>"><?php echo $post->post_excerpt; ?></textarea>
+			<?php
+		}
+	}
+
+	/**
+	 * Remove bloat.
+	 */
+	public function remove_meta_boxes() {
+		remove_meta_box( 'slugdiv', 'api_product', 'normal' );
+	}
+
+	/**
+	 * Add Meta boxes.
+	 */
+	public function add_meta_boxes() {
+		add_meta_box( 'woocommerce-api-product-data', __( 'API Product Data', 'wp-product-licensing' ), array( $this, 'api_product_data' ), 'api_product', 'normal', 'high' );
+	}
+
+	/**
+	 * Output API Product Data.
+	 */
+	public function api_product_data( $post ) {
+		wp_nonce_field( 'woocommerce_save_data', 'woocommerce_meta_nonce' );
+		?>
+		<style type="text/css">
+			#edit-slug-box, #minor-publishing-actions { display:none }
+		</style>
+		<div id="api_product_options" class="panel-wrap api_product_data">
+
+			<ul class="api_product_data_tabs wc-tabs" style="display:none;">
+				<?php
+					$api_product_data_tabs = apply_filters( 'woocommerce_api_product_data_tabs', array(
+						'general' => array(
+							'label'  => __( 'General', 'wp-product-licensing' ),
+							'target' => 'general_api_product_data',
+							'class'  => 'general_api_product_data',
+						)
+					) );
+
+					foreach ( $api_product_data_tabs as $key => $tab ) {
+						?><li class="<?php echo $key; ?>_options <?php echo $key; ?>_tab <?php echo implode( ' ' , (array) $tab['class'] ); ?>">
+							<a href="#<?php echo $tab['target']; ?>"><?php echo esc_html( $tab['label'] ); ?></a>
+						</li><?php
+					}
+				?>
+			</ul>
+			<div id="general_api_product_data" class="panel woocommerce_options_panel"><?php
+
+			?></div>
+		</div>
+		<?php
 	}
 }
 
