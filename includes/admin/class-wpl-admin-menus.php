@@ -86,11 +86,16 @@ class WPL_Admin_Menus {
 	 * @return array
 	 */
 	public function wc_screen_ids( $screen_ids ) {
-		$wc_screen_id = sanitize_title( __( 'Licenses', 'wp-product-licensing' ) );
-		$screen_ids[] = $wc_screen_id . '_page_wpl-add-license';
-		$screen_ids[] = 'edit-api_product';
-		$screen_ids[] = 'api_product';
-		return $screen_ids;
+		$wpl_screen_id  = sanitize_title( __( 'Licenses', 'wp-product-licensing' ) );
+		$wpl_screen_ids = array(
+			'toplevel_page_wpl-' . $wpl_screen_id,
+			$wpl_screen_id . '_page_wpl-add-license',
+			$wpl_screen_id . '_page_wpl-activations',
+			'edit-api_product',
+			'api_product'
+		);
+
+		return array_merge( $screen_ids, $wpl_screen_ids );
 	}
 
 	/**
