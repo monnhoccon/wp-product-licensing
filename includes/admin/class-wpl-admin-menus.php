@@ -28,13 +28,32 @@ class WPL_Admin_Menus {
 		add_action( 'admin_menu', array( $this, 'add_license_menu' ), 50 );
 		add_filter( 'menu_order', array( $this, 'menu_order' ) );
 		add_filter( 'woocommerce_screen_ids', array( $this, 'wc_screen_ids' ) );
+		add_filter( 'set-screen-option', array( $this, 'set_screen_option' ), 10, 3 );
 	}
 
 	/**
 	 * Add menu items.
 	 */
 	public function admin_menu() {
-		add_menu_page( __( 'Licenses', 'wp-product-licensing' ), __( 'Licenses', 'wp-product-licensing' ), 'manage_options', 'wpl-licenses' , array( $this, 'licenses_page' ), 'dashicons-lock', '55.8' );
+		$licenses_page = add_menu_page( __( 'Licenses', 'wp-product-licensing' ), __( 'Licenses', 'wp-product-licensing' ), 'manage_options', 'wpl-licenses' , array( $this, 'licenses_page' ), 'dashicons-lock', '55.8' );
+
+		add_action( 'load-' . $licenses_page, array( $this, 'licenses_page_init' ) );
+	}
+
+	/**
+	 * Loads screen options into memory for use within licenses.
+	 */
+	public function licenses_page_init() {
+		add_screen_option( 'per_page', array( 'option' => 'wpl_licenses_per_page' ) );
+	}
+
+	/**
+	 * Validate screen options on update.
+	 */
+	public function set_screen_option( $status, $option, $value ) {
+		if ( 'wpl_licenses_per_page' == $option ) {
+			return $value;
+		}
 	}
 
 	/**
