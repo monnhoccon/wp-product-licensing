@@ -44,7 +44,7 @@ class WPL_Admin_Menus {
 	 * Loads screen options into memory for use within licenses.
 	 */
 	public function licenses_page_init() {
-		add_screen_option( 'per_page', array( 'option' => 'wpl_licenses_per_page' ) );
+		add_screen_option( 'per_page', array( 'default' => 20, 'option' => 'wpl_licenses_per_page' ) );
 	}
 
 	/**
