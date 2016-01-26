@@ -40,6 +40,7 @@ class WPL_Admin_Menus {
 		$licenses_page = add_menu_page( __( 'Licenses', 'wp-product-licensing' ), __( 'Licenses', 'wp-product-licensing' ), 'manage_options', 'wpl-licenses' , array( $this, 'licenses_page' ), 'dashicons-lock', '55.8' );
 
 		add_action( 'load-' . $licenses_page, array( $this, 'licenses_page_init' ) );
+		add_action( 'manage_' . $licenses_page . '_columns', array( $this, 'licenses_columns' ) );
 	}
 
 	/**
@@ -47,6 +48,25 @@ class WPL_Admin_Menus {
 	 */
 	public function licenses_page_init() {
 		add_screen_option( 'per_page', array( 'default' => 20, 'option' => 'wpl_licenses_per_page' ) );
+	}
+
+	/**
+	 * Define custom columns for licenses.
+	 *
+	 * @param  array $columns
+	 * @return array
+	 */
+	public function licenses_columns( $columns ) {
+		$columns['cb']               = '<input type="checkbox" />';
+		$columns['activation_email'] = __( 'Activation Email', 'wp-product-licensing' );
+		$columns['user']             = __( 'User', 'wp-product-licensing' );
+		$columns['product']          = __( 'Product', 'wp-product-licensing' );
+		$columns['order_id']         = __( 'Order ID', 'wp-product-licensing' );
+		$columns['usage']            = __( 'Usage / Limit', 'wp-product-licensing' );
+		$columns['created_date']     = __( 'Created Date', 'wp-product-licensing' );
+		$columns['expiry_date']      = __( 'Expiry date', 'wp-product-licensing' );
+
+		return $columns;
 	}
 
 	/**
