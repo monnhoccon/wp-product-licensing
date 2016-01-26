@@ -27,6 +27,8 @@ class WPL_Admin_Menus {
 		add_action( 'admin_menu', array( $this, 'activations_menu' ), 20 );
 		add_action( 'admin_menu', array( $this, 'add_license_menu' ), 50 );
 		add_filter( 'menu_order', array( $this, 'menu_order' ) );
+
+		// Set screens
 		add_filter( 'woocommerce_screen_ids', array( $this, 'wc_screen_ids' ) );
 		add_filter( 'set-screen-option', array( $this, 'set_screen_option' ), 10, 3 );
 	}
@@ -45,15 +47,6 @@ class WPL_Admin_Menus {
 	 */
 	public function licenses_page_init() {
 		add_screen_option( 'per_page', array( 'default' => 20, 'option' => 'wpl_licenses_per_page' ) );
-	}
-
-	/**
-	 * Validate screen options on update.
-	 */
-	public function set_screen_option( $status, $option, $value ) {
-		if ( 'wpl_licenses_per_page' == $option ) {
-			return $value;
-		}
 	}
 
 	/**
@@ -115,6 +108,15 @@ class WPL_Admin_Menus {
 		);
 
 		return array_merge( $screen_ids, $wpl_screen_ids );
+	}
+
+	/**
+	 * Validate screen options on update.
+	 */
+	public function set_screen_option( $status, $option, $value ) {
+		if ( 'wpl_licenses_per_page' == $option ) {
+			return $value;
+		}
 	}
 
 	/**
