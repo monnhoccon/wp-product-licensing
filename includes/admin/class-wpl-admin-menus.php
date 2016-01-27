@@ -62,7 +62,7 @@ class WPL_Admin_Menus {
 		$columns['user']             = __( 'User', 'wp-product-licensing' );
 		$columns['product']          = __( 'Product', 'wp-product-licensing' );
 		$columns['order_id']         = __( 'Order ID', 'wp-product-licensing' );
-		$columns['usage']            = __( 'Usage / Limit', 'wp-product-licensing' );
+		$columns['usage_limit']      = __( 'Usage / Limit', 'wp-product-licensing' );
 		$columns['date_created']     = __( 'Date Created', 'wp-product-licensing' );
 		$columns['date_expires']     = __( 'Date Expires', 'wp-product-licensing' );
 
