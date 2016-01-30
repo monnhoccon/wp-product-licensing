@@ -98,6 +98,6 @@ class WP_Product_Licensing {
 	}
 }
 
-add_action( 'plugins_loaded', array( 'WP_Product_Licensing', 'get_instance' ), 0 );
-
 endif;
+
+WP_Product_Licensing::get_instance();
