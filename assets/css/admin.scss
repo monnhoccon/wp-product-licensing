@@ -1,0 +1,49 @@
+/**
+ * admin.scss
+ * General admin styles.
+ */
+
+/**
+ * Imports
+ */
+@import "bourbon";
+
+/**
+ * Styling begins
+ */
+table.wp-list-table {
+
+	.column-license_key {
+		width: 16%;
+
+		code {
+			display: block;
+			text-align: center;
+			font-weight: normal;
+		}
+	}
+
+	.column-activation_email {
+		width: 18%;
+
+		span.email {
+			color: #555;
+			margin: 3px 0;
+			display: block;
+		}
+	}
+
+	.column-user,
+	.column-usage_limit {
+		width: 10%;
+	}
+
+	.column-usage_limit {
+		text-align: center;
+	}
+
+	.column-date_created,
+	.column-date_expires {
+		width: 13%;
+	}
+}
