@@ -44,6 +44,9 @@ class WP_Product_Licensing {
 		// Checks with WooCommerce is installed.
 		if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
 			$this->includes();
+
+			// Hooks.
+			register_activation_hook( __FILE__, array( 'WPL_Install', 'install' ) );
 		} else {
 			add_action( 'admin_notices', array( $this, 'woocommerce_missing_notice' ) );
 		}
@@ -81,6 +84,7 @@ class WP_Product_Licensing {
 	 * Includes.
 	 */
 	private function includes() {
+		include_once( 'includes/class-wpl-install.php' );
 		include_once( 'includes/class-wpl-post-types.php' );
 
 		if ( is_admin() ) {
