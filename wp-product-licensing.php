@@ -47,6 +47,7 @@ class WP_Product_Licensing {
 
 			// Hooks.
 			register_activation_hook( __FILE__, array( 'WPL_Install', 'install' ) );
+			add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		} else {
 			add_action( 'admin_notices', array( $this, 'woocommerce_missing_notice' ) );
 		}
@@ -90,6 +91,21 @@ class WP_Product_Licensing {
 		if ( is_admin() ) {
 			include_once( 'includes/admin/class-wpl-admin-menus.php' );
 			include_once( 'includes/admin/class-wpl-admin-post-types.php' );
+		}
+	}
+
+	/**
+	 * Enqueue admin styles and scripts.
+	 */
+	public function admin_enqueue_scripts() {
+		$screen = get_current_screen();
+		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+		// Register Styles and Scripts
+		wp_register_style( 'wp-product-licensing', plugins_url( '/assets/css/admin.css', __FILE__ ), array(), self::VERSION );
+
+		if ( in_array( $screen->id, array( 'toplevel_page_wpl-licenses' ) ) ) {
+			wp_enqueue_style( 'wp-product-licensing' );
 		}
 	}
 
