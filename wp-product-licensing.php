@@ -87,6 +87,7 @@ class WP_Product_Licensing {
 	private function includes() {
 		include_once( 'includes/class-wpl-install.php' );
 		include_once( 'includes/class-wpl-post-types.php' );
+		include_once( 'includes/wpl-license-functions.php' );
 
 		if ( is_admin() ) {
 			include_once( 'includes/admin/class-wpl-admin-menus.php' );

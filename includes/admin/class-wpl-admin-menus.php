@@ -143,7 +143,27 @@ class WPL_Admin_Menus {
 	 * Init the license page.
 	 */
 	public function licenses_page() {
+		include_once( 'licenses/class-wpl-licenses-table-list.php' );
 
+		$licences_table_list = new WPL_Licenses_Table_List();
+		$licences_table_list->prepare_items();
+
+		?>
+		<div class="wrap">
+			<h1><?php _e( 'Licenses', 'wp-product-licensing' ); ?> <a href="<?php echo admin_url( 'admin.php?page=wpl-add-license' ); ?>" class="add-new-h2"><?php _e( 'Add License', 'wp-product-licensing' ); ?></a></h1>
+			<form id="licence-management" method="post">
+				<input type="hidden" name="page" value="wp_product_licenses" />
+				<?php
+
+					$licences_table_list->views();
+					$licences_table_list->search_box( __( 'Search Licenses', 'wp-product-licensing' ), 'license' );
+					$licences_table_list->display();
+
+					wp_nonce_field( 'save', 'wp_product_licencing_nonce' );
+				?>
+			</form>
+		</div>
+		<?php
 	}
 
 	/**
