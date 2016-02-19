@@ -4,7 +4,7 @@
  *
  * Registers post types.
  *
- * @class     WCL_Post_Types
+ * @class     WPL_Post_Types
  * @version   1.0.0
  * @package   WooCommerce/Classes/API Products
  * @category  Class
@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * WCL_Post_Types Class.
+ * WPL_Post_Types Class.
  */
-class WCL_Post_Types {
+class WPL_Post_Types {
 
 	/**
 	 * Hook in methods.
@@ -74,4 +74,4 @@ class WCL_Post_Types {
 	}
 }
 
-WCL_Post_Types::init();
+WPL_Post_Types::init();
