@@ -188,9 +188,9 @@ class WPL_Licenses_Table_List extends WP_List_Table {
 		$usage_url   = sprintf( '<a href="%s">%s</a>', admin_url( 'admin.php?page=wpl-activations&license=' . $license->license_id ), absint( $usage_count ) );
 
 		if ( $usage_limit ) {
-			return sprintf( __( '%s / %s', 'woocommerce' ), $usage_url, $usage_limit );
+			return sprintf( __( '%s / %s', 'wp-product-licensing' ), $usage_url, $usage_limit );
 		} else {
-			return sprintf( __( '%s / &infin;', 'woocommerce' ), $usage_url );
+			return sprintf( __( '%s / &infin;', 'wp-product-licensing' ), $usage_url );
 		}
 	}
 
@@ -241,7 +241,7 @@ class WPL_Licenses_Table_List extends WP_List_Table {
 	 */
 	protected function get_bulk_actions() {
 		return array(
-			'revoke' => __( 'Revoke', 'woocommerce' )
+			'revoke' => __( 'Revoke', 'wp-product-licensing' )
 		);
 	}
 
