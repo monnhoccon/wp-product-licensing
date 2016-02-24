@@ -34,6 +34,9 @@ class WPL_Admin_Post_Types {
 		// Meta-Box controls
 		add_action( 'add_meta_boxes', array( $this, 'remove_meta_boxes' ), 10 );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 20 );
+
+		// Disable post type view mode options
+		add_filter( 'view_mode_post_types', array( $this, 'disable_view_mode_options' ) );
 	}
 
 	/**
@@ -156,6 +159,19 @@ class WPL_Admin_Post_Types {
 			?></div>
 		</div>
 		<?php
+	}
+
+	/**
+	 * Removes api_product from the list of post types that support "View Mode" switching.
+	 * View mode is seen on posts where you can switch between list or excerpt. Our post types don't support
+	 * it, so we want to hide the useless UI from the screen options tab.
+	 *
+	 * @param  array $post_types Array of post types supporting view mode
+	 * @return array             Array of post types supporting view mode, without api_product
+	 */
+	public function disable_view_mode_options( $post_types ) {
+		unset( $post_types['api_product'] );
+		return $post_types;
 	}
 }
 
