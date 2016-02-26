@@ -137,7 +137,7 @@ class WPL_Licenses_Table_List extends WP_List_Table {
 			return '<span class="na">&ndash;</span>';
 		}
 
-		$user_name = ! empty( $user->data->display_name ) ? $user->data->display_name : $user->data->user_login;
+		$user_name = ! empty( $user->display_name ) ? $user->display_name : $user->user_login;
 
 		if ( current_user_can( 'edit_user' ) ) {
 			return '<a href="' . esc_url( add_query_arg( array( 'user_id' => $user->ID ), admin_url( 'user-edit.php' ) ) ) . '">' . esc_html( $user_name ) . '</a>';
