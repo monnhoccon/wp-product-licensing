@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: WP Product Licensing 1.0.0\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/axisthemes/wp-product-licensing/issues\n"
-"POT-Creation-Date: 2016-01-22 16:27:18+00:00\n"
+"POT-Creation-Date: 2016-02-27 17:31:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,11 +14,248 @@ msgstr ""
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n 0.5.3\n"
 
-#: wp-product-licensing.php:92
+#: includes/admin/class-wpl-admin-menus.php:40
+#: includes/admin/class-wpl-admin-menus.php:121
+#: includes/admin/class-wpl-admin-menus.php:153
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:31
+msgid "Licenses"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-menus.php:61
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:52
+msgid "Activation Email"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-menus.php:62
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:53
+msgid "User"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-menus.php:63
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:54
+msgid "Product"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-menus.php:64
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:55
+msgid "Order ID"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-menus.php:65
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:56
+msgid "Usage / Limit"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-menus.php:66
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:57
+msgid "Date Created"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-menus.php:67
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:58
+msgid "Date Expires"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-menus.php:76
+msgid "Activations"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-menus.php:83
+#: includes/admin/class-wpl-admin-menus.php:153
+msgid "Add License"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-menus.php:159
+msgid "Search Licenses"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:52
+#: includes/admin/class-wpl-admin-post-types.php:55
+#: includes/admin/class-wpl-admin-post-types.php:57
+msgid "API Product updated."
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:53
+msgid "Custom field updated."
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:54
+msgid "Custom field deleted."
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:56
+msgid "API Product restored to revision from %s"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:58
+msgid "API Product saved."
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:59
+msgid "API Product submitted."
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:60
+msgid "API Product scheduled for: <strong>%1$s</strong>."
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:61
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:62
+msgid "API Product draft updated."
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:77
+msgid "%s product updated."
+msgid_plural "%s products updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/class-wpl-admin-post-types.php:78
+msgid "%s product not updated, somebody is editing it."
+msgid_plural "%s products not updated, somebody is editing them."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/class-wpl-admin-post-types.php:79
+msgid "%s product permanently deleted."
+msgid_plural "%s products permanently deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/class-wpl-admin-post-types.php:80
+msgid "%s product moved to the Trash."
+msgid_plural "%s products moved to the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/class-wpl-admin-post-types.php:81
+msgid "%s product restored from the Trash."
+msgid_plural "%s products restored from the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/class-wpl-admin-post-types.php:96
+msgid "API Product name"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:110
+msgid "Description (optional)"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:126
+msgid "API Product Data"
+msgstr ""
+
+#: includes/admin/class-wpl-admin-post-types.php:144
+msgid "General"
+msgstr ""
+
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:30
+msgid "License"
+msgstr ""
+
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:40
+msgid "No Licenses found."
+msgstr ""
+
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:51
+msgid "License Key"
+msgstr ""
+
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:101
+msgid "ID: %d"
+msgstr ""
+
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:102
+msgid "View/Edit"
+msgstr ""
+
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:103
+msgid "Revoke API License Key"
+msgstr ""
+
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:103
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:244
+msgid "Revoke"
+msgstr ""
+
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:191
+msgid "%s / %s"
+msgstr ""
+
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:193
+msgid "%s / &infin;"
+msgstr ""
+
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:208
+#: includes/admin/licenses/class-wpl-licenses-table-list.php:222
+msgid "Unknown"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:42
+msgid "API Products"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:43
+msgid "API Product"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:45
+msgid "All API Products"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:46
+msgid "Add New"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:47
+msgid "Add API Product"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:48
+msgid "Edit"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:49
+msgid "Edit API Product"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:50
+msgid "New API Product"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:51 includes/class-wpl-post-types.php:52
+msgid "View API Product"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:53
+msgid "Search API Products"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:54
+msgid "No API Products found"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:55
+msgid "No API Products found in trash"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:56
+msgid "Parent API Product"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:58
+msgid "This is where you can create and manage api products."
+msgstr ""
+
+#: wp-product-licensing.php:118
 msgid "WP Product License depends on the last version of %s or later to work!"
 msgstr ""
 
-#: wp-product-licensing.php:92
+#: wp-product-licensing.php:118
 msgid "WooCommerce 2.3"
 msgstr ""
 
@@ -31,9 +268,7 @@ msgid "http://www.axisthemes.com/wp-product-licensing/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid ""
-"A WooCommerce plugin for handling WP Product Licences and access to "
-"downloads."
+msgid "WordPress Premium Products Licensing for WooCommerce."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -42,4 +277,9 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "http://axisthemes.com"
+msgstr ""
+
+#: includes/class-wpl-post-types.php:44
+msgctxt "Admin menu name"
+msgid "API Products"
 msgstr ""
