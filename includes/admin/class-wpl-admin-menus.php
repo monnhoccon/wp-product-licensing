@@ -37,7 +37,7 @@ class WPL_Admin_Menus {
 	 * Add menu items.
 	 */
 	public function admin_menu() {
-		$licenses_page = add_menu_page( __( 'Licenses', 'wp-product-licensing' ), __( 'Licenses', 'wp-product-licensing' ), 'manage_options', 'wpl-licenses' , array( $this, 'licenses_page' ), 'dashicons-lock', '55.8' );
+		$licenses_page = add_menu_page( __( 'Licenses', 'wp-product-licensing' ), __( 'Licenses', 'wp-product-licensing' ), 'manage_woocommerce', 'wpl-licenses' , array( $this, 'licenses_page' ), 'dashicons-lock', '55.8' );
 
 		add_action( 'load-' . $licenses_page, array( $this, 'licenses_page_init' ) );
 		add_action( 'manage_' . $licenses_page . '_columns', array( $this, 'licenses_columns' ) );
@@ -73,14 +73,14 @@ class WPL_Admin_Menus {
 	 * Add menu items.
 	 */
 	public function activations_menu() {
-		add_submenu_page( 'wpl-licenses', __( 'Activations', 'wp-product-licensing' ),  __( 'Activations', 'wp-product-licensing' ) , 'manage_options', 'wpl-activations', array( $this, 'activations_page' ) );
+		add_submenu_page( 'wpl-licenses', __( 'Activations', 'wp-product-licensing' ),  __( 'Activations', 'wp-product-licensing' ) , 'manage_woocommerce', 'wpl-activations', array( $this, 'activations_page' ) );
 	}
 
 	/**
 	 * Add menu items.
 	 */
 	public function add_license_menu() {
-		add_submenu_page( 'wpl-licenses', __( 'Add License', 'wp-product-licensing' ),  __( 'Add License', 'wp-product-licensing' ) , 'manage_options', 'wpl-add-license', array( $this, 'add_licence_page' ) );
+		add_submenu_page( 'wpl-licenses', __( 'Add License', 'wp-product-licensing' ),  __( 'Add License', 'wp-product-licensing' ) , 'manage_woocommerce', 'wpl-add-license', array( $this, 'add_licence_page' ) );
 	}
 
 	/**
